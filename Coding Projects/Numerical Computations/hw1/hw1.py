@@ -1,4 +1,3 @@
-#Author: Muaz Latif
 def main():
 	##Estes Alpha III
 	length = 0.311 		#meters
