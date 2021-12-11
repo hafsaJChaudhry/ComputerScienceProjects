@@ -1,0 +1,7 @@
+Script started on Mon 26 Mar 2018 10:50:24 PM EDT
+[aahmed6@linux1 proj3]nasm -f elf32 -g -F stabs main3.asm 
+[aahmed6@linux1 proj3] [K[aahmed6@linux1 proj3] nasm -f elf32 -g -F stabs psrt_dec.asm 
+[aahmed6@linux1 proj3]exit
+exit
+
+Script done on Mon 26 Mar 2018 10:51:05 PM EDT

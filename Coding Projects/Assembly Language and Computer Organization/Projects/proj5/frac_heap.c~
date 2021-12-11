@@ -1,0 +1,100 @@
+// File frac_heap.c
+#include <stdio.h>
+#include <stdlib.h>
+#include "frac_heap.h"
+
+#define GLOBALSIZE 20
+
+int freeSpace = 0;
+fraction heap[GLOBALSIZE] = {0};
+block blocks[GLOBALSIZE] = {0};
+fraction* freeSpot;
+
+int startingBlock = 0;
+
+void init_heap(){
+
+  int x;
+  for(x = 0; x < GLOBALSIZE; x ++){    
+    block *currBlock = &blocks[x];
+    currBlock->isFree = 1;  
+  }
+
+}
+
+void dump_heap(){
+  int x;
+  for(x = 0; x < GLOBALSIZE; x ++){
+    fraction* tempFrac = &heap[x];
+    printf("%d\t%d\t%d\n",tempFrac->sign, tempFrac->numerator, tempFrac->denominator);
+  }   
+
+}
+
+/*
+fraction init_frac(signed char plusMin, unsigned int num, unsigned int den) {
+
+  fraction newFrac;
+  newFrac.sign = plusMin;
+  newFrac.numerator = num;
+  newFrac.denominator = den;
+
+  return newFrac;
+
+}
+*/
+
+fraction* new_frac(){
+  int i;
+  fraction* temp_frac = &heap[0];
+  int found = 0;
+  int loc;
+
+  for(i = 0; i < GLOBALSIZE; i++) {
+    if(temp_frac -> sign == 0) {
+      found = 1;
+    }
+  }
+  
+  
+
+  if(found == 1) {
+    return temp_frac;
+  } else {
+    printf("Could not find a space");
+  }
+}  
+
+void del_frac(fraction* x) {
+
+  fraction* limit = &heap[GLOBALSIZE];
+  int validity = limit - x;
+  if(validity > 19 || validity < 0) {
+
+    printf("Error, out of bounds detected");
+
+  } else {
+    
+    x -> sign = 0;
+    x -> numerator = 0;
+    x -> denominator = 0;
+
+    int next = 0;
+    int location = -1;
+    for(next = 0; next < GLOBALSIZE; next++) {
+
+      if(location == -1) {
+	
+	if((heap[next].sign == 0) && (heap[next].sign == 0)) {
+
+	  x -> denominator = next;
+	  location = 1;
+
+	}
+
+      }
+
+    }
+
+  }
+}

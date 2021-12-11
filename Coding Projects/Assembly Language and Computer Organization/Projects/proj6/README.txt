@@ -1,0 +1,1 @@
+I hope I did well on this one. This program has a minor error with assigning a new frac to the user. It also prints out the memory locations always in use. (Which is the entire array from the moment it is allocated)

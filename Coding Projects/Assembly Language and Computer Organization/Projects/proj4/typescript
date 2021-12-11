@@ -1,0 +1,11 @@
+Script started on Mon 09 Apr 2018 11:45:33 PM EDT
+[aahmed6@linux2 proj4]lscd cs341proj/proj2[23Gfedora1 g++ -include ../../00Proj2/Int341.h -I ../../00Proj2/ -I . ../../ 00Proj2/Int341.cpp SqList.cpp ../../00Proj2/p2comptest.cpp -o t0.out[A[95G[30G[1@%[95G.0[1@/[70G[A[23G[9P[87G/00Proj2//[9P[61G[A[87G[23G[9@fedora1% [95G.I[9@/00Proj2/[70G[A[30G[P[95G//[P[69G[A[23Gcd cs341proj/proj2[K[95G 0[K[A[41G[23Gls[K[Kgcc -m32 -ansi -Wall -g -c sort_books.c
+sort_books.c: In function ‘main’:
+sort_books.c:77: warning: assignment makes integer from pointer without a cast
+sort_books.c:68: warning: ‘d’ may be used uninitialized in this function
+[aahmed6@linux2 proj4]nasm -f elf -g bookcmp.asm
+[aahmed6@linux2 proj4]gcc -m32 sort_books.o bookcmp.o -o sort_books
+[aahmed6@linux2 proj4]exit
+exit
+
+Script done on Mon 09 Apr 2018 11:46:22 PM EDT

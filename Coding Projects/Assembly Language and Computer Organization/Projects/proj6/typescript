@@ -1,0 +1,38 @@
+Script started on Wed 25 Apr 2018 11:18:14 PM EDT
+[aahmed6@linux3 proj6]gcc h[Kfrac_heap.c[Kh
+[aahmed6@linux3 proj6]gcc frac_heap.h[Kc
+/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../lib64/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: ld returned 1 exit status
+[aahmed6@linux3 proj6]gcc main6.c frac_heap.h frac_heap.c
+[aahmed6@linux3 proj6]a.out
+called malloc() (16): returned 0x24db010
+)*** BEGIN HEAP DUMP ***
+0x24db020
+0x24db030
+0x24db040
+0x24db050
+*** END HEAP DUMP ***
+ plus *** BEGIN HEAP DUMP ***
+0x24db020
+0x24db030
+0x24db040
+0x24db050
+*** END HEAP DUMP ***
+ plus 0/1 plus 0/1 = 0/1
+*** BEGIN HEAP DUMP ***
+0x24db020
+0x24db030
+0x24db040
+0x24db050
+*** END HEAP DUMP ***
+*** BEGIN HEAP DUMP ***
+0x24db020
+0x24db030
+0x24db040
+0x24db050
+*** END HEAP DUMP ***
+[aahmed6@linux3 proj6]exit
+exit
+
+Script done on Wed 25 Apr 2018 11:18:43 PM EDT

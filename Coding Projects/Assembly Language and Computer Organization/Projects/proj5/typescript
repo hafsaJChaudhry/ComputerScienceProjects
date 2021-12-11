@@ -1,0 +1,75 @@
+Script started on Wed 18 Apr 2018 09:50:37 PM EDT
+[aahmed6@linux3 proj5]gcc frac_heap.h frac_heap.c
+/usr/lib/gcc/x86_64-redhat-linux/4.4.7/../../../../lib64/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: ld returned 1 exit status
+[aahmed6@linux3 proj5]clear
+[H[2J[aahmed6@linux3 proj5]gcc main5.c frac_heap.h frac_heap.c
+[aahmed6@linux3 proj5]e[Ka.out
+FALL 1
+-2/3 plus 1/4 = -5/12
+0:	-1	2	3
+1:	1	1	4
+2:	-1	5	12
+3:	0	0	4
+4:	0	0	5
+5:	0	0	6
+6:	0	0	7
+7:	0	0	8
+8:	0	0	9
+9:	0	0	10
+10:	0	0	11
+11:	0	0	12
+12:	0	0	13
+13:	0	0	14
+14:	0	0	15
+15:	0	0	16
+16:	0	0	17
+17:	0	0	18
+18:	0	0	19
+19:	0	0	-1
+0:	-1	2	3
+1:	0	0	3
+2:	-1	5	12
+3:	0	0	4
+4:	0	0	5
+5:	0	0	6
+6:	0	0	7
+7:	0	0	8
+8:	0	0	9
+9:	0	0	10
+10:	0	0	11
+11:	0	0	12
+12:	0	0	13
+13:	0	0	14
+14:	0	0	15
+15:	0	0	16
+16:	0	0	17
+17:	0	0	18
+18:	0	0	19
+19:	0	0	-1
+0:	-1	2	3
+1:	1	8	42
+2:	-1	5	12
+3:	1	17	96
+4:	1	247	672
+5:	0	0	6
+6:	0	0	7
+7:	0	0	8
+8:	0	0	9
+9:	0	0	10
+10:	0	0	11
+11:	0	0	12
+12:	0	0	13
+13:	0	0	14
+14:	0	0	15
+15:	0	0	16
+16:	0	0	17
+17:	0	0	18
+18:	0	0	19
+19:	0	0	-1
+[aahmed6@linux3 proj5]clear
+[H[2J[aahmed6@linux3 proj5]exit
+exit
+
+Script done on Wed 18 Apr 2018 09:51:08 PM EDT

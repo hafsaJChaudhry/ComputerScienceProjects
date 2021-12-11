@@ -1,0 +1,181 @@
+%define STDIN 0
+%define STDOUT 1
+%define STDERR 2
+%define SYSCALL_EXIT  1
+%define SYSCALL_READ  3
+%define SYSCALL_WRITE 4
+
+;;  Offsets for fields in struct book.
+;;
+%define AUTHOR_OFFSET 21
+%define TITLE_OFFSET 0
+%define SUBJECT_OFFSET 36
+%define YEAR_OFFSET 44
+
+        extern book1, book2
+	
+	global bookcmp
+	
+	
+	_start:	 
+
+	;;  Call the compare function
+		jmp bookcmp
+
+
+;;; ; ;;;;;;;;;;;
+	
+	bookcmp:
+
+
+;;;  Reserve all registers
+	                push eax
+	                push ebx
+	                push ecx
+	                push edx
+;;;   Move book pointers into the registers
+	                lea ebx, [book1 + TITLE_OFFSET]
+	                lea ecx, [book2 + TITLE_OFFSET]
+
+;;;   Use eax as the final return
+;;;   Use edx as your increment counter
+			mov eax, 0
+			mov edx, 0
+			jmp .tLoop
+	
+	
+;;; ; ;;;;;;;;;
+
+	
+	.tLoop:
+
+		cmp bl, 0x00
+		je .nullCharT
+	;;  If you found a null character, handle it
+
+	;;  Else, keep comparing
+	        cmp [ebx + TITLE_OFFSET + edx], [ecx + TITLE_OFFSET + edx]
+		jg .retPos
+
+		cmp [ebx + TITLE_OFFSET + edx], [ecx + TITLE_OFFSET + edx]
+		jl .retNeg 
+	
+		add edx, 1
+		jmp .tLoop
+	
+	
+;;; ;;;;;;;;;;;
+	.aLoop:
+		lea ebx, [book1 + AUTHOR_OFFSET]
+                lea ecx, [book2 + AUTHOR_OFFSET]
+
+                cmp bl, 0x00
+		je .nullCharA
+;;;   If you found a null character, handle it
+
+;;;   Else, keep comparing
+		cmp [ebx + AUTHOR_OFFSET + edx], [ecx + AUTHOR_OFFSET + edx]
+		jg .retPos
+	
+		cmp [ebx + AUTHOR_OFFSET + edx], [ecx + AUTHOR_OFFSET + edx]
+		jl .retNeg
+
+		add edx, 1
+		jmp .aLoop
+	
+	
+	
+	
+;;; ;;;;;;;;;;;
+	.sLoop:
+                lea ebx, [book1 + SUBJECT_OFFSET]
+		lea ecx, [book2 + SUBJECT_OFFSET]
+	
+		cmp bl, 0x00
+		je .nullCharS
+;;; ;   If you found a null character, handle it
+
+;;; ;   Else, keep comparing
+		cmp [ebx + SUBJECT_OFFSET + edx], [ecx + SUBJECT_OFFSET + edx]
+		jg .retPos
+		
+		cmp [ebx + SUBJECT_OFFSET + edx], [ecx + SUBJECT_OFFSET + edx]
+		jl .retNeg
+
+		add edx, 1
+		jmp .sLoop
+	
+	
+;;; ; ;;;;;;;;;;;
+	
+	.yCmp:
+                lea ebx, [book1 + YEAR_OFFSET]
+		lea ecx, [book2 + YEAR_OFFSET]
+	;; If they are equal, never change eax from zero!
+		cmp ebx, ecx
+		je .done
+
+		jmp .finalComp
+	
+;;; ; ;;;;;;;;;;;
+	;;  For iff book1 is less than and things are fine
+	.retNeg:
+		mov eax, -1
+		jmp .done
+	
+;;; ; ;;;;;;;;;;;
+	;;  For if book1 is bigger and needs to switch
+	.retPos:
+
+		mov eax, 1
+		jmp .done
+	
+
+;;; ; ;;;;;;;;;;;
+	.nullCharT:
+		cmp cl, 0x00
+		je .setZeroT
+	;; Finish and return -1 if cl is NOT zero
+                jmp retNeg
+	
+
+;;; ;;;;;;;;;;;;;
+        .nullCharA:
+		cmp cl, 0x00
+		je .setZeroA
+
+		jmp retNeg
+	
+        .nullCharS:
+		cmp cl, 0x00
+		je .setZeroS
+
+                jmp retNeg
+	
+	.setZeroT:
+	
+		mov edx, 0
+		jmp .aLoop
+	
+	.setZeroA:
+
+                mov edx, 0
+		jmp .sLoop
+	
+	.setZeroS:
+
+        	mov edx, 0
+		jmp .yCmp
+
+	.finalComp:
+		cmp ebx, ecx
+		jg .retPos
+	
+		jmp .retNeg	
+	.done:
+
+;;; ;   Return everything except for eax because eax will return
+		pop edx
+		pop ecx
+		pop ebx
+	
