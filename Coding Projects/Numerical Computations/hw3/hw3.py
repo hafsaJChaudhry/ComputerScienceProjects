@@ -1,5 +1,4 @@
 #File: hw3.py
-#Author: Muaz Latif
 import math
 
 def f(x):
