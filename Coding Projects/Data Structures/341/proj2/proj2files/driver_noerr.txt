@@ -1,0 +1,16 @@
+
+--------------- Errors and Deductions ---------------
+
+0: (100) No errors in testCSRExact().
+0: (200) No errors in testCSRUnordered().
+0: (300) No errors in testNbIterator().
+0: (400) No errors in testEgIterator().
+0: (510) No errors in testExceptions(), construtor with n = 0.
+0: (520) No errors in testExceptions(), construtor with n < 0.
+0: (530) No errors in testExceptions(), addEdge() with bad destination vertex.
+0: (540) No errors in testExceptions(), addEdge() with bad source vertex.
+0: (550) No errors in testExceptions(), dereference of neighbor end iterator.
+0: (560) No errors in testExceptions(), dereference of edge end iterator.
+
+Total Deductions: 0
+

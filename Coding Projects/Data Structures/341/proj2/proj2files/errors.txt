@@ -1,0 +1,85 @@
+Each error should be reported only once.  For example, testCSRExact()
+must test the correctness of the arrays after each edge is added to
+the graphs. Suppose m_nz is incorrect after each edge is added.  The
+"Incorrect m_nz" error should only be added to the Error queue one
+time.
+
+In all the errors described below, the first column is the point
+deduction, the second column is the error id number, and the third
+column is the error description.
+
+testCSRExact()
+
+  Test exact correctness of m_re, m_nz, and m_ci.  Assume m_re
+  initialized to all zeroes.  Should test the arrays after each edge
+  is added to the graphs.
+  
+  Three independent errors; total deduction of up to 15 points
+  
+   5  101  Incorrect values in m_re
+   5  102  Incorrect values in m_nz
+   5  103  Incorrect values in m_ci
+   0  100  No errors in testCSRExact()
+
+testCSRUnordered()
+
+  Test correctness of m_re, m_nz, and m_ci ignoring whether the data
+  for each row is ordered by increasing m_ci values.  Should test the
+  arrays after each edge is added to the graphs.
+  
+  Only one of two errors can occur; total deduction up to 10 points
+  
+  10  201  Incorrect m_re; cannot perform unordered test
+  10  202  Failure of undordered test of CSR
+   0  200  No errors in testCSRUnordered()
+
+testNbIterator()
+
+  Test the NbIterator for each vertex in the graph.  
+  
+  Two independent errors; total deduction up to 10 points.
+  
+   5  301  Incorrect neighbor set size
+   5  302  Incorrect values from neighbor iterator
+   0  300  No errors in testNbIterator()
+
+testEgIterator()
+
+  Two independent errors; total deduction up to 10 points.
+
+   5  401  Incorrect edge set size
+   5  402  Incorrect values from edge iterator
+   0  400  No errors in testEgIterator()
+
+testExceptions()
+
+  For each operation which should throw an out_of_range exception,
+  either it throws the out_of_range exception (no deduction), throws
+  some other exception (2 point deduction), or throws no exception at
+  all (5 point deduction).
+
+  Total deduction up to 30 points.
+  
+   5  511  Constructor with n = 0 did not throw an exception
+   2  512  Constructor with n = 0 threw incorrect exception
+   0  510  No errors in testExceptions(), construtor with n = 0
+   
+   5  521  Constructor with n < 0 did not throw an exception
+   2  522  Constructor with n < 0 threw incorrect exception
+   0  520  No errors in testExceptions(), construtor with n < 0
+
+   5  531  addEdge() with bad destination vertex did not throw an exception
+   2  532  addEdge() with bad destination vertex threw incorrect exception
+   0  530  No errors in testExceptions(), addEdge() with bad destination vertex
+
+   5  541  addEdge() with bad source vertex did not throw an exception
+   2  542  addEdge() with bad source vertex threw incorrect exception
+   0  540  No errors in testExceptions(), addEdge() with bad source vertex
+   
+   5  551  Dereference of neighbor end iterator threw no exception
+   2  552  Dereference of neighbor end iterator threw incorrect exception
+   0  550  No errors in testExceptions(), dereference of neighbor end iterator
+   
+   5  561  Dereference of edge end iterator threw no exception
+   2  562  Dereference of edge end iterator threw incorrect exception
+   0  560  No errors in testExceptions(), dereference of edge end iterator

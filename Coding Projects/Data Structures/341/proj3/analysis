@@ -1,0 +1,60 @@
+Project 3 - Analysis of Alternative Restructuring
+
+
+Username: Hafsa Chaudhry
+
+
+I. For each case in which you believe trinode restructuring (or some
+   other, novel idea) can be applied to more efficiently rebalance a
+   CTree, provide
+
+     (a) Description of the conditions; i.e., what must be true about
+     	 the imbalanced node and its subtrees to apply trinode
+     	 restructuring?  Conditions on height and size? Ancestors and
+     	 descendents?
+
+	 the height and ancestors difference has to be more than 1.
+
+     (b) Describe how trinode restructuring would be applied in this
+         case; e.g. which nodes are x, y, z?
+
+	 Z = first unbalanced node
+	 Y = child of Z w/ biggest height
+	 X = child of Y w/ biggest height
+
+     (c) Explain why trinode restructuring results in a size-balanced
+         subtree.
+
+	 the height is maintained with a difference of 1
+
+     (d) Did you implement it, and did it work as expected?
+
+     	 no, i did not implement or test it. I have been stuck with working out my rebalance function for 2 days. The TA's weren't able to figure it out either.
+
+     /// Type your answers here.  If you have multiple cases in which
+     /// trinode restructuring can be applied, be sure to label
+     /// the explanations for each case clearly.
+
+     /// You may include text representations of trees to help explain.
+     /// For example:
+     ///                     7
+     ///                   /   \
+     ///                  3     12
+     ///                /   \
+     ///               1    5
+
+
+     (a)the height and ancestors difference has to be more than 1.
+     (b) Z = first unbalanced node
+         Y = child of Z w/ biggest height
+         X = child of Y w/ biggest height
+     (c)the height is maintained with a difference of 1
+     (d)no, i did not implement or test it. I have been stuck with working out\
+ my rebalance function for 2 days. The TA's weren't able to figure it out either. So in the end I ran out of time unfortunently...
+
+
+II. Extra Credit: Why are the trees in this project called "Chestnut
+    Trees?"
+
+    /// Type your answer here.
+    it could be because how they grow or becuase of their appearance. according to wikipedia, they grow slowly in height but maintain a high depth value similar to the CTrees in this project. for appearance, the chestnut tree's seed that grows on the branches resemble nodes and the branches resemble links. the seeds at the top are like the root node and the seeds along the branches are like the children nodes until you get to the seeds(nodes) at the bottom with no more branches(links) below it resembling leaf nodes.
