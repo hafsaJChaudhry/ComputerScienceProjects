@@ -1,0 +1,10 @@
+int main(){
+
+  double length = 0.311;
+  double diam = 0.0241;
+  double bodyArea = 0.000506;
+  double bodyCD = 0.45;
+  double finArea = 0.00496;
+  double finCD = 
+
+}
