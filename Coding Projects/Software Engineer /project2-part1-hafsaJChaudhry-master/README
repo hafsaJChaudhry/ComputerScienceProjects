@@ -1,0 +1,32 @@
+Part 1: Tic-Tac-Toe (40% of Project 2 Grade)
+kernel module used to play against user in tic-tac-toe
+
+implementations:
+1)virtual character device (with a corresponding entry in /dev that the user can open a file descriptor to)
+2)interact with the user using normal file read and write operations
+
+Module will work by: 
+1)user opens a file descriptor to the module's /dev entry (which shall be named /dev/tictactoe)
+2)writes commands to that file descriptor with the write() system call
+3)reads the responses to those commands with the read() system call
+
+Module must keep track of:
+1)state of the game board
+2)implement logic to read and parse commands
+3)check the validity of any commands
+4)check if the game is over (win or draw?)
+
+Module named tictactoe.ko once it is compiled.
+added 4.Exit to exit driver
+
+**TO SET READ AND WRITE PERMISSION**
+sudo chmod 666 /dev/tictactoe_dev
+
+**********************INSTRUCTIONS***************************
+cc tictactoe_game.c -o tictactoe
+make
+sudo insmod tictactoe.ko
+sudo ./tictactoe_game
+
+then play game. enjoy
+*************************************************************
