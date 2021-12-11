@@ -1,0 +1,44 @@
+function [Op, Or] = get_params(x, N)
+% FILE: get_params.m measures the polarization and rotation paramters of
+% the swarm
+%
+% DESCRIPTION: The polarization (Op) and rotation (Or) parameters are 
+% paramters that describe the swarm, as a whole. Op and Or are both between
+% 0 and 1. Op of 1 indicates tha
+%
+% INPUTS:
+% 1. communication_model - a string that finds out which communication
+% model the use wants to use
+% 2. N - Number of robots
+% 3. x - the positions and direction of the robots
+%
+% OUTPUTS:
+%  An N x N matrix representing which robots are neighbors with one another 
+% 
+%
+% TODO:
+% None
+
+%% Authors: Mohammad Safwan Alam, Musad Haque - 2018 
+%%%%%%%%%%%%%
+
+%Cumulative ui and ri x ui
+Cu = [0;0;0];
+Cru = [0;0;0];
+% Swarm center of mass centroid [xc; yc]
+rho = [sum(x(1,:),2)/N;sum(x(2,:),2)/N];
+
+for i=1:1:N
+    ui = [cos(x(3, i));sin(x(3, i)); 0];
+    Cu = Cu + ui;
+    ri = [x(1,i) - rho(1,1); x(2,i) - rho(2,1); 0]...
+        /norm([x(1,i) - rho(1,1); x(2,i) - rho(2,1); 0]);
+    Cru = Cru + cross(ui, ri);
+end
+Op = norm(Cu)/N;
+Or = norm(Cru)/N;
+
+end
+
+
+
