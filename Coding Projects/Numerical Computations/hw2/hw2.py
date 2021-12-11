@@ -1,5 +1,4 @@
 #HW2.py
-#Muaz Latif
 import numpy as np
 import math
 def main():
