@@ -1,0 +1,74 @@
+html, body {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: #242424;
+}
+
+.district-header {
+    font-size: 1.7em;
+    font-weight: bold;
+    margin: 0px;
+}
+
+h5 {
+    margin-bottom: 10px;
+}
+
+.help-btn {
+    background-color: coral;
+}
+
+#left_column, #right_column{
+    color: white;
+    float: left;
+    width: 30%;
+    height: 100%;
+    text-align: center;
+}
+
+/* #right_column {
+    overflow: auto;
+} */
+#center_column {
+    float: left;
+    width: 69%;
+    height: 100%;
+    
+}
+
+#mapid {
+    width: 100%;
+    margin-top: 1%;
+    height: 98%;
+}
+
+#algorithms {
+     
+    margin-top: 40%;
+    
+    
+}
+
+#algorithms li {
+    margin: 50px 0px;
+}
+
+.algo-btn {
+    margin: 5%;
+}
+
+#district-description {
+    font-size: 20px;
+    color: white;
+    position: relative;
+    width: 88%;
+    height: 30%;
+    bottom: 0%;
+    padding: 1%;
+    margin-left: 6%;
+    margin-top:10%;
+    margin-bottom: 1%;
+    background-color: gray;
+}
+
