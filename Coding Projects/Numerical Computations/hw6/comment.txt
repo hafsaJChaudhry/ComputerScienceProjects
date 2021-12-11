@@ -1,0 +1,7 @@
+System Information: 
+I ran this code in C, with my Windows 10 Laptop Computer via Putty on UMBC's GL server.
+
+Comments:
+The normalized time started off at right above 10 seconds for the 100 x 100
+But for 200x200, 400x400, and 800x800 it dropped down to around 7 seconds each.
+For 1600x1600 and 3200x3200 it increased drastically to about 15 and 20 seconds respectively.
