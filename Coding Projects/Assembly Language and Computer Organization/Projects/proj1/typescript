@@ -1,0 +1,13 @@
+Script started on Wed 21 Feb 2018 11:56:20 PM EST
+[aahmed6@linux3 proj1]nasm -f elf32 -g -F stabs isbn.asm
+[aahmed6@linux3 proj1]ld -m elf_i386 -o isbn isbn.o
+[aahmed6@linux3 proj1]isbn
+Enter 10-dig ISBN number: 1254236890
+Segmentation fault
+[aahmed6@linux3 proj1]isbn
+Enter 10-dig ISBN number: 123456789X
+Segmentation fault
+[aahmed6@linux3 proj1]exit
+exit
+
+Script done on Wed 21 Feb 2018 11:57:12 PM EST
